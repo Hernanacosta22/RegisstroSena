@@ -1,0 +1,16 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 19/04/2023, 7:19:51 p. m.
+    Author     : APRENDIZ
+*/
+
+body{
+  font-family: 'Libre Baskerville', 'serif', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #333;
+  font: 1,2rem;
+  line-height: 1,3em;
+  margin: 0; 
+}
