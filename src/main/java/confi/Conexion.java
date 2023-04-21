@@ -7,25 +7,26 @@ package confi;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- *
- * @author APRENDIZ
- */
-public class Conexion {
-    {
-        Connection con; 
-        try{
-        public Conexion("com.mysql.jdbc.Driver");
-        con-DriverManager.getConnection("jdbc:mysql://localhost:3306");
-}catch(Exception e)        
-{
-System.err.println("Error"+e);
 
-}
-public Connection getConnection()
- 
-}
-return con
-}
+public class Conexion {
+    Connection con;
+    
+    public Conexion(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tecnologo2023", "root", "");
+        
+        }catch(Exception e){
+        
+               System.err.println("Error"+e);
+        }
+    }
+        
+        public Connection getConnection(){
+        
+              return con;
+            
+        }
+    }
 
 

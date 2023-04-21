@@ -5,6 +5,10 @@
 package modeldao;
 
 import Interfaz.MeAprendiz;
+import confi.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import model.Aprendiz;
 
@@ -12,8 +16,14 @@ import model.Aprendiz;
  *
  * @author APRENDIZ
  */
-public class AprendizDao implements MeAprendiz {
-
+public class AprendizDao implements MeAprendiz { 
+    
+    Conexion co= new Conexion(); 
+    Connection cn;
+    PreparedStatement pc; 
+    ResultSet rs; 
+    Aprendiz ape = new Aprendiz();
+    
     @Override
     public Aprendiz list(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -25,12 +35,24 @@ public class AprendizDao implements MeAprendiz {
     }
 
     @Override
-    public boolean resgistrar(Aprendiz ap) { 
-        String sql="insert into Aprendiz(Docu,NombreA,ApellidoA,EmailA,TelefonoA)values('"+ap.getDocuapre()+"','"+ap.getNombre()+"','"+ap.getApellido()+"','"+ap.getEmailA()+"','"+ap.getTeleapre()+"')";
+    public boolean resgistrar(Aprendiz ap) {  
+         String sql="insert into Aprendiz(Docu,NombreA,ApellidoA,EmailA,TelefonoA)values('"+ap.getDocuapre()+"','"+ap.getNombre()+"','"+ap.getApellido()+"','"+ap.getEmailA()+"','"+ap.getTeleapre()+"')";
         try{
+         cn=co.getConnection(); 
+        pc=cn.prepareStatement(sql); 
+        pc.executeUpdate(); 
+        
+        /*while(rs.next()){ 
+            ape.setId(rs.getInt("id")); 
+            ape.setDocuapre(rs.getInt("Docu")); 
+            ape.setNombre(rs.getString("NombreA")); 
+            ape.setApellido(rs.getString("ApellidoA"));  
+            ape.setEmailA(rs.getString("EmailA")); 
+            ape.setTeleapre(rs.getInt("TelefonoA"));*/
+            
         
         
-        }catch() 
+        }catch(Exception el) 
         {
         }
          return false;
